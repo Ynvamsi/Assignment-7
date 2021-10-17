@@ -1,49 +1,67 @@
 /*eslint-env browser*/
-/*jslint-env browser*/
 
 //STEP 1
-function halfNumber(number_1){
-    return number_1/2;
+var number;
+
+function halfNumber() {
+    "use strict";
+    window.document.write("Half of " + number + " is " + number / 2 + ".<br>");
 }
-var number_1 = parseInt(prompt("Enter a number below :"));
-window.console.log("Half of "+number_1+" is "+halfNumber(number_1)+".");
+
+number = parseFloat(window.prompt("STEP 1. Half of a number. \nEnter a number:"));
+halfNumber();
 
 //STEP 2
-var square;
- function squareNumber(number){
-     return number*number;
- }
- var number = parseInt(prompt("Enter a number to be squared :"));
- window.console.log("The result of squaring the number " + number + " is " + squareNumber(number)+".");
-
- //STEP 3
- function percentOf(number_1,number_2){
-    return (number_1/number_2)*100;
+var number;
+function squareNumber() {
+    "use strict";
+    window.document.write("The result of squaring a number " + number + " is " + number * number + ".<br>");
 }
-var number_1 = parseInt(prompt("Enter First Number"));
-var number_2 = parseInt(prompt("Enter Second Number"));
-window.console.log(number_1+" is "+percentOf(number_1,number_2)+"% of "+number_2+".");
+
+number = parseFloat(window.prompt("STEP 2. Squaring a number. \nEnter a number:"));
+squareNumber();
+
+//STEP 3
+var firstNumber, secondNumber;
+
+function percentOf() {
+    "use strict";
+    window.document.write(firstNumber + " is " + firstNumber / secondNumber * 100 + "% of " + secondNumber + ".<br>");
+}
+
+firstNumber = parseFloat(window.prompt("STEP 3. Percent the first number represents of the second number. \nEnter a first number:"));
+secondNumber = parseFloat(window.prompt("Enter a second number:"));
+percentOf();
 
 //STEP 4
-function findModulus(number_1,number_2){
-    return number_2%number_1;
+var firstModNumber;
+var secondModNumber;
+
+function findModulus() {
+    "use strict";
+    var mod = firstModNumber % secondModNumber;
+    window.document.write(mod + " is the modulus of " + firstModNumber + " and " + secondModNumber + ".<br>");
 }
-var number_1 = parseInt(prompt("Enter First Number :"));
-var number_2 = parseInt(prompt("Enter Second Number :"));
-window.console.log(findModulus(number_1,number_2)+" is the modulus of "+number_1+" and "+number_2+".");
+
+firstModNumber = parseFloat(window.prompt("STEP 4. The modulus of the two numbers. \nEnter a first number:"));
+secondModNumber = parseFloat(window.prompt("Enter a second number:"));
+findModulus();
 
 //STEP 5
-var arr = prompt("Enter numbers seperated by commas for addition :");
-var Num_arr = arr.split(",");
-for(var i=0;i<Num_arr.length;i++){
-    Num_arr[i] = parseInt(Num_arr[i]);
-}
-function sumOfNumbers(Num_arr){
-    var sum=0;
-    for (var j=0;j<Num_arr.length;j++){
-        sum=sum+Num_arr[j];
+var firstCalcNumber;
+var secondCalcNumber;
+var thirdCalcNumber;
+
+function calculate(numbers) {
+    "use strict";
+    var base = Number(numbers), i;
+    for (i = 1; i < arguments.length; i += 1) {
+        base += Number(arguments[i]);
     }
-    return sum;
+    window.document.write("The sum of numbers " + firstCalcNumber + " , " + secondCalcNumber + " , " + thirdCalcNumber + " is " + base + ".");
 }
-var ans=sumOfNumbers(Num_arr);
-window.console.log("Sum of " +arr+ " is "+ans+".");
+
+firstCalcNumber = parseFloat(window.prompt("Enter enter first number:"));
+secondCalcNumber = parseFloat(window.prompt("Enter enter second number:"));
+thirdCalcNumber = parseFloat(window.prompt("Enter enter third number:"));
+calculate(firstCalcNumber, secondCalcNumber, thirdCalcNumber);
